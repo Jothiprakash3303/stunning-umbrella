@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special 💖</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+  margin:0;
+  padding:0;
+  font-family: 'Pacifico', cursive;
+  overflow:hidden;
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #ff758c, #ff7eb3);
+  background-size:400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.slide {
+  height:100vh;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  top:0;
+  left:0;
+  transition:1s;
+}
+
+.card {
+  background: rgba(0,0,0,0.55);
+  padding:30px;
+  border-radius:25px;
+  max-width:420px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 0 30px rgba(255,255,255,0.3);
+}
+
+button {
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  font-size:1em;
+  margin:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.yes { background:#ff4d6d; color:white; }
+.no { background:#ccc; }
+
+button:hover { transform:scale(1.1); }
+
+#slide2 {
+  top:100%;
+  background:black;
+  flex-direction:column;
+}
+
+#slide2 img {
+  max-width:90%;
+  max-height:80vh;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(255,255,255,0.4);
+}
+
+.message {
+  color:white;
+  font-size:1.5em;
+  margin-top:20px;
+  text-align:center;
+}
+</style>
+</head>
+<body>
+
+<!-- Slide 1 -->
+<div class="slide" id="slide1">
+  <div class="card">
+    <h1>Hey 🌙</h1>
+    <p>
+      I didn’t want to keep this inside anymore... 💭<br>
+      I like you. 💖<br>
+      If you don’t feel the same, I understand.<br>
+      But I’m really happy I told you.
+    </p>
+    <button class="yes" onclick="openSlide()">Yes 💖</button>
+    <button class="no" onclick="moveNo(this)">No 🙈</button>
+  </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide" id="slide2">
+  <img src="your-jothi.jpg" alt="Love Image">
+  <div class="message">
+    I am in love with you ❤️
+  </div>
+</div>
+
+<script>
+function openSlide(){
+  document.getElementById("slide1").style.top = "-100%";
+  document.getElementById("slide2").style.top = "0";
+}
+
+function moveNo(btn){
+  btn.style.position = "absolute";
+  btn.style.top = Math.random()*window.innerHeight+"px";
+  btn.style.left = Math.random()*window.innerWidth+"px";
+}
+</script>
+
+</body>
+</html>
