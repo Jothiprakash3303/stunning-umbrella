@@ -33,7 +33,7 @@ body {
   position:absolute;
   top:0;
   left:0;
-  transition:1s;
+  transition:1s ease-in-out;
 }
 
 .card {
@@ -45,6 +45,97 @@ body {
   color:#fff;
   box-shadow:0 0 30px rgba(255,255,255,0.3);
 }
+
+button {
+  padding:10px 20px;
+  border:none;
+  border-radius:20px;
+  font-size:1em;
+  margin:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.yes { background:#ff4d6d; color:white; }
+.no { background:#ccc; }
+
+button:hover { transform:scale(1.1); }
+
+#slide2 {
+  top:100%;
+  background:black;
+  flex-direction:column;
+}
+
+#slide2 img {
+  max-width:90%;
+  max-height:80vh;
+  border-radius:20px;
+  box-shadow:0 0 40px rgba(255,255,255,0.4);
+}
+
+.message {
+  color:white;
+  font-size:1.5em;
+  margin-top:20px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide" id="slide1">
+  <div class="card">
+    <h1>Hey 🌙</h1>
+    <p>
+      It was too late to realize  
+      In trying to impress you, I forgot myself.  
+      And in trying to forget you, I lost myself. 💭<br><br>
+
+      Whenever I try to forget your memories, I lose half of the happy moments in my life.  
+      The other half is imagining my future with you 💖<br><br>
+
+      If someday the moon calls your name, don't be surprised,  
+      I tell the moon about you every night. 🌙<br><br>
+
+      My life won’t be colourful without your colourful smile.<br><br>
+
+      If you asked me how many times you came to my mind,  
+      I would say only once… because you came and never left. ❤️<br><br>
+
+      But I’m really happy I told you.
+    </p>
+
+    <button class="yes" onclick="openSlide()">Yes 💖</button>
+    <button class="no" onclick="moveNo(this)">No 🙈</button>
+  </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide" id="slide2">
+  <img src="jothi.jpg" alt="Love Image">
+  <div class="message">
+    I Think I am in love with you ❤️
+  </div>
+</div>
+
+<script>
+function openSlide(){
+  document.getElementById("slide1").style.top = "-100%";
+  document.getElementById("slide2").style.top = "0";
+}
+
+function moveNo(btn){
+  btn.style.position = "absolute";
+  btn.style.top = Math.random()*(window.innerHeight-50)+"px";
+  btn.style.left = Math.random()*(window.innerWidth-100)+"px";
+}
+</script>
+
+</body>
+</html>}
 
 button {
   padding:10px 20px;
@@ -123,4 +214,5 @@ function moveNo(btn){
 </body>
 
 </html>
+
 
